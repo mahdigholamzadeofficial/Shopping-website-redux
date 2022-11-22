@@ -84,7 +84,7 @@ const ProductDetail = () => {
                 className={`bg-rose-700 web-text w-full sm:w-[180px] justify-center text-white px-6 py-3 text-lg rounded hover:opacity-70 taransition flex items-center absolute mt-10 sm:mt-0 ${
                   quantityCounter(state, product) ? "right-0" : "right-[-100%]"
                 }`}
-                onClick={() => dispatch(removeItem("REMOVE_ITEM"))}
+                onClick={() => dispatch(removeItem(product))}
               >
                 <BsTrashFill />
                 Remove item

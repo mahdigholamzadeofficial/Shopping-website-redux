@@ -61,7 +61,7 @@ const ShoppingResult = () => {
       <div className="flex items-center flex-col md:flex-row flex-wrap  md:flex-nowrap  justify-between w-[90%] mx-auto p-8">
         <div className="lg:w-9/12 w-full mx-auto md:block md:flex">
           <input
-            className="border w-full md:w-9/12 focus:border-primary py-4 pl-4 outline-none"
+            className="border w-full md:w-9/12 focus:border-primary py-4 pl-4 outline-none rounded-none"
             type="number"
             placeholder="Please enter a coupon code number"
             name="coupon"

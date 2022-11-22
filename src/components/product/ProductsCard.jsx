@@ -11,7 +11,7 @@ const ProductsCard = ({ product }) => {
       <div className=" sm:py-5 sm:px-2">
         <h4 className="text-primary my-3">${product.price}</h4>
         <h6 className="text-primary text-sm my-3">{shorter(product.title)}</h6>
-        <div className="flex items-center">
+        <div className="flex items-center text-xs sm:text-base">
           <span className="text-gold">
             <Stars rate={rate} />
           </span>
