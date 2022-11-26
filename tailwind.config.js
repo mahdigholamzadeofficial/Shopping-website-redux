@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       backgroundImage:{
         "error-404" :"url('/src/assets/images/error-404.jpg')",
+        "footer" : "url('/src/assets/images/footer.jpeg')"
       }
       ,
       colors:{

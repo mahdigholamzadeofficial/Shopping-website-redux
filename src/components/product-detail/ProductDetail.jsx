@@ -38,7 +38,7 @@ const ProductDetail = () => {
   }
   return (
     product && (
-      <div className="max-h-screen flex flex-col lg:flex-row justify-between">
+      <div className="min-h-screen flex flex-col lg:flex-row justify-between pb-3 ">
         {/* ////////////////////////////  Left side of the container */}
         <div className="w-5/6 flex justify-center items-center flex-col pt-10 text-primary mx-auto lg:mx-0 lg:w-9/12 lg:flex-row lg:items-start lg:mt-40">
           <img
@@ -95,8 +95,8 @@ const ProductDetail = () => {
 
         {/* ////////////////////////////  Right side of the container */}
         <div
-          className="mx-auto px-2 bg-zinc-300 w-5/6 flex flex-col sm:flex-row sm:flex-wrap  
-          sm:justify-evenly lg:w-1/5 lg:mx-0 lg:overflow-scroll lg:justify-start lg:flex-col lg:flex-nowrap"
+          className="min-h-screen lg:h-screen mx-auto px-2 bg-zinc-300 w-5/6 flex flex-col sm:flex-row sm:flex-wrap  
+          sm:justify-evenly lg:w-1/5 lg:mx-0 lg:overflow-scroll lg:justify-start lg:flex-col lg:flex-nowrap rounded-b-md"
         >
           {products.data.map((product) => (
             <ProductDetailCard key={product.id} product={product} />

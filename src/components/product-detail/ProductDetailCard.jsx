@@ -7,7 +7,7 @@ const ProductDetailCard = ({ product }) => {
   return (
     <Link
       to={`/store/product-detail/${product.id}`}
-      className="flex flex-row my-4 bg-white p-2 rounded hover:opacity-70 transition duration-400 ease sm:w-[40%] lg:w-full"
+      className="flex flex-row my-4 bg-white p-2 rounded hover:opacity-70 transition-all duration-400 ease-in-out sm:w-[40%] lg:w-full"
     >
       <img src={product.image} className="w-[100px] h-[100px]" alt="" />
       <div className="m-4">

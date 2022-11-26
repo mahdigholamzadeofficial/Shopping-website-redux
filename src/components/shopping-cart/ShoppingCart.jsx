@@ -15,8 +15,8 @@ const ShoppingCart = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.cartState);
   return (
-    <section>
-      <div className=" py-4">
+    <section className="min-h-screen">
+      <div className="py-4">
         {state.selectedItems.map((product) => {
           return (
             <div
