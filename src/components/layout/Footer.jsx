@@ -18,7 +18,7 @@ const Footer = () => {
     categories = [...mySet];
   }
   return (
-    <div className="bg-footer bg-no-repeat bg-center bg-cover">
+    <div className="bg-footer bg-fixed bg-no-repeat bg-center bg-cover">
       <div className="text-white bg-primary backdrop-blur	 bg-opacity-70 h-full w-full">
         <div className="container mx-auto">
 
