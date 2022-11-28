@@ -1,14 +1,35 @@
-import React, { useState } from "react";
-
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
 const ProductComment = () => {
   const [comment, setComment] = useState({
     name: "",
     email: "",
-    comment: "",
+    message: "",
   });
   const clickHandler = () => {
     // Send  data in this part line to the server!
     console.log(comment);
+    if (comment.name && comment.email && comment.message) {
+      // because of the limitation in API ;we do not have that option to send a comment
+
+      // axios.post("https://fakestoreapi.com/products/ *post*", {
+      //   body: {
+      //     ...comment,
+      //   },
+      // }). then(response=>{
+      toast.success("Comment sent successfully !", { position: "top-center" });
+      setTimeout(() => {
+        setComment({
+          name: "",
+          email: "",
+          message: "",
+        });
+      }, 3000);
+      // })
+    } else {
+      toast.error("Invalid data!", { position: "top-center" });
+    }
   };
   return (
     <div className="w-full border-l-2 border-primary mx-auto lg:ml-4 p-5 my-6">
@@ -44,14 +65,14 @@ const ProductComment = () => {
         </div>
         <textarea
           className={`placeholder:text-primary resize-y min-h-[100px] h-[180px]	border-2 border-primary p-4 outline-none rounded ${
-            comment.comment &&
+            comment.message &&
             "bg-primary text-white transition duration-1000 ease"
           }`}
-          name="comment"
+          name="message"
           placeholder="Enter Your Comment"
           cols="30"
           rows="10"
-          value={comment.comment}
+          value={comment.message}
           onChange={(e) =>
             setComment({ ...comment, [e.target.name]: e.target.value })
           }
@@ -59,7 +80,7 @@ const ProductComment = () => {
 
         <button
           className={`border-2 border-primary p-4 outline-none rounded mt-5 ${
-            comment.comment &&
+            comment.message &&
             comment.name &&
             comment.email &&
             "bg-primary text-white transition duration-600 ease"
@@ -69,6 +90,7 @@ const ProductComment = () => {
           Send
         </button>
       </div>
+      <ToastContainer />
     </div>
   );
 };
