@@ -83,7 +83,7 @@ const ProductComment = () => {
             comment.message &&
             comment.name &&
             comment.email &&
-            "bg-primary text-white transition duration-600 ease"
+            "bg-primary text-white transition duration-700 ease"
           }`}
           onClick={clickHandler}
         >

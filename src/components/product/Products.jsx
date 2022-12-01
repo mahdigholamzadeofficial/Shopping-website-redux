@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 ////////////////////////////////// Redux
 import { useSelector, useDispatch } from "react-redux";
+import BackToTop from "../../helper/BackToTop";
 import { fetchProducts } from "../../redux/product/ProductAction";
 
 ////////////////////////////////// Componetns
@@ -24,6 +25,7 @@ const Products = () => {
         ////////////////////////////////// In case we had not received data from server Loader component will be returned
         <Loader />
       )}
+      <BackToTop />
     </div>
   );
 };

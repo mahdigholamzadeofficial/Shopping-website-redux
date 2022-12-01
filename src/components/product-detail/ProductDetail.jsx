@@ -21,6 +21,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { addItem, removeItem } from "../../redux/cart/CartAction";
 import { fetchProducts } from "../../redux/product/ProductAction";
 import ProductComment from "./product-comment/ProductComment";
+import BackToTop from "../../helper/BackToTop";
+import Loader from "../loader/Loader";
 
 const ProductDetail = () => {
   const state = useSelector((state) => state.cartState);
@@ -39,7 +41,7 @@ const ProductDetail = () => {
   }
   return (
     <section className="min-h-screen">
-      {product && (
+      {product ? (
         <div className="min-h-screen flex flex-col lg:flex-row justify-between pb-3 ">
           {/* ////////////////////////////  Left side of the container */}
           <div className="w-5/6 flex justify-center items-center flex-col pt-10 text-primary mx-auto lg:mx-0 lg:w-9/12 lg:items-start ">
@@ -112,7 +114,10 @@ const ProductDetail = () => {
             ))}
           </div>
         </div>
+      ) : (
+        <Loader />
       )}
+      <BackToTop />
     </section>
   );
 };
