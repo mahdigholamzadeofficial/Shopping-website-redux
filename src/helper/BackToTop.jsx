@@ -2,11 +2,11 @@ import React from "react";
 import { SlArrowUp } from "react-icons/sl";
 const BackToTop = () => {
   const clickHandler = () => {
-    navigator.vibrate(200);
     window.scroll({
       top: 0,
       behavior: "smooth",
     });
+    navigator.vibrate(100);
   };
   return (
     <button
