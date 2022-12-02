@@ -1,7 +1,8 @@
 import React from "react";
-import { BsChevronDoubleUp } from "react-icons/bs";
+import { SlArrowUp } from "react-icons/sl";
 const BackToTop = () => {
   const clickHandler = () => {
+    navigator.vibrate(200);
     window.scroll({
       top: 0,
       behavior: "smooth",
@@ -10,9 +11,19 @@ const BackToTop = () => {
   return (
     <button
       onClick={clickHandler}
-      className="z-20 rounded-full fixed bottom-5 text-white hover:opacity-90 transition duration-500 ease text-2xl font-bold right-5 bg-primary p-5"
+      className="z-20 rounded-full fixed bottom-5 text-white hover:opacity-90 transition duration-500 ease text-2xl right-5 bg-primary p-4 overflow-hidden"
     >
-      <BsChevronDoubleUp />
+      <div className="flex flex-col relative ">
+        <span className="absolute top-0 animate-[backToTopAni_2000ms_ease-in-out_infinite]">
+          <SlArrowUp />
+        </span>
+        <span className="absolute top0 animate-[backToTopAni_2000ms_ease-in-out_infinite_400ms]">
+          <SlArrowUp />
+        </span>
+        <span>
+          <SlArrowUp />
+        </span>
+      </div>
     </button>
   );
 };

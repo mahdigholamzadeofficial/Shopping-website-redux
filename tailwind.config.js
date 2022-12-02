@@ -16,6 +16,7 @@ module.exports = {
       animation:{
         "imageAni" :"imageAni 600ms ease-in-out",
         "titleAni" :"titleAni 700ms ease-in-out",
+        "backToTopAni":"backToTopAni 2000ms ease-in-out infinite",
       },
       keyframes:{
         imageAni:{
@@ -38,6 +39,16 @@ module.exports = {
 
           },
         },
+        backToTopAni:{
+          "0%":{
+            opacity:"1",
+            transform:"translateY(0px)",
+          },
+          "100%":{
+            opacity:"0",
+            transform:"translateY(-50px)",
+          },
+        }
       },
     },
   },

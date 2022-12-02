@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import { FcCheckmark } from "react-icons/fc";
 ///// Redux
 import { useDispatch, useSelector } from "react-redux";
 import { checkoutItem, clearItem } from "../../redux/cart/CartAction";
@@ -16,6 +17,7 @@ const ShoppingResult = () => {
   const clickHandler = (checkout) => {
     if (checkout) {
       dispatch(checkoutItem());
+      navigator.vibrate(200)
       toast.success("Congratulations", { position: "top-center" });
     } else {
       dispatch(clearItem());
@@ -51,8 +53,11 @@ const ShoppingResult = () => {
         </div>
       </div>
       {state.checkout && state.totalItems == false && (
-        <div className="flex items-center justify-center w-[90%] mx-auto p-8 text-primary text-center font-bold text-xl">
-          <h1>
+        <div className="bg-green-100 flex items-center flex-col justify-center w-[90%] mx-auto py-6 text-primary text-center font-bold sm:text-xl text-xs">
+          <span className=" text-3xl sm:text-5xl">
+            <FcCheckmark />
+          </span>
+          <h1 className="text-green-900 ">
             Thanks For Choosing Us! <br />
             You Will Get Your Products At Less Than A Week!
           </h1>
