@@ -17,8 +17,8 @@ const ShoppingResult = () => {
   const clickHandler = (checkout) => {
     if (checkout) {
       dispatch(checkoutItem());
-      navigator.vibrate(100);
       toast.success("Congratulations", { position: "top-center" });
+      navigator && navigator.vibrate && navigator.vibrate(70);
     } else {
       dispatch(clearItem());
       navigate("/store", { replace: true });

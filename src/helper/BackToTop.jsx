@@ -6,7 +6,7 @@ const BackToTop = () => {
       top: 0,
       behavior: "smooth",
     });
-    navigator.vibrate(100);
+    navigator && navigator.vibrate && navigator.vibrate(70);
   };
   return (
     <button
